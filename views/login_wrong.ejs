@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Spotispy - Login</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&amp;subset=latin,latin-ext'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+    <style>
+
+        .fa_custom {
+            color: #ffffff;
+            margin: 10px;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            vertical-align: bottom;
+            cursor: pointer
+        }
+        
+        .fa_custom:hover {
+            color: hsla(138, 100%, 60%, 0.74);
+        }
+        
+        .submit {
+            width: 65%;
+            color: #ffffff;
+            font-size: 14px;
+            letter-spacing: 1px;
+            background: rgba(28, 165, 10, 0.897);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            box-sizing: border-box;
+            border: 2px solid rgba(196, 196, 196, 0.02);
+            text-align: center;
+        }
+        
+        .box {
+            position: relative;
+            top: 0;
+            opacity: 1;
+            float: left;
+            padding: 60px 50px 40px 50px;
+            width: 100%;
+            background: #fff;
+            border-radius: 10px;
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            z-index: 5;
+        }
+        
+        .box.back {
+            transform: scale(0.95);
+            -webkit-transform: scale(0.95);
+            -ms-transform: scale(0.95);
+            top: -20px;
+            opacity: 0.8;
+            z-index: -1;
+        }
+        
+        .box:before {
+            content: "";
+            width: 100%;
+            height: 30px;
+            border-radius: 10px;
+            position: absolute;
+            top: -10px;
+            background: rgba(255, 255, 255, 0.6);
+            left: 0;
+            transform: scale(0.95);
+            -webkit-transform: scale(0.95);
+            -ms-transform: scale(0.95);
+            z-index: -1;
+        }
+        
+        .overbox .title {
+            color: #fff;
+        }
+        
+        .overbox .title:before {
+            background: #fff;
+        }
+        
+        .title {
+            width: 100%;
+            float: left;
+            line-height: 46px;
+            font-size: 34px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #1ed760;
+            position: relative;
+        }
+        
+        .title:before {
+            content: "";
+            width: 5px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: -50px;
+            background: #1ed760;
+        }
+        
+        .input {
+            transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            -webkit-transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            -ms-transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .input label,
+        .input input,
+        .input .spin {
+            transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            -webkit-transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            -ms-transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .button {
+            transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            -webkit-transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            -ms-transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .button button .button.login button i.fa {
+            transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            -webkit-transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            -ms-transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .material-button .shape:before,
+        .material-button .shape:after {
+            transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            -webkit-transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            -ms-transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .button.login button {
+            transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            -webkit-transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            -ms-transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .material-button,
+        .alt-2,
+        .material-button .shape,
+        .alt-2 .shape,
+        .box {
+            transition: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+            -webkit-transition: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+            -ms-transition: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .input {
+            width: 100%;
+            float: left;
+        }
+        
+        .input label,
+        .input input,
+        .input .spin {
+            width: 100%;
+            float: left;
+        }
+        
+        .button {
+            width: 100%;
+            float: left;
+        }
+        
+        .button button {
+            width: 100%;
+            float: left;
+        }
+        
+        .input,
+        .button {
+            margin-top: 30px;
+            height: 70px;
+        }
+        
+        .input {
+            position: relative;
+        }
+        
+        .input input {
+            position: relative;
+        }
+        
+        .button {
+            position: relative;
+        }
+        
+        .button button {
+            position: relative;
+        }
+        
+        .input input {
+            height: 60px;
+            top: 10px;
+            border: none;
+            background: transparent;
+            font-family: "Roboto", sans-serif;
+            font-size: 24px;
+            color: rgba(0, 0, 0, 0.8);
+            font-weight: 300;
+        }
+        
+        .input label {
+            font-family: "Roboto", sans-serif;
+            font-size: 24px;
+            color: rgba(0, 0, 0, 0.8);
+            font-weight: 300;
+        }
+        
+        .button button {
+            font-family: "Roboto", sans-serif;
+            font-size: 24px;
+            color: rgba(0, 0, 0, 0.8);
+            font-weight: 300;
+        }
+        
+        .input:before,
+        .input .spin {
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .input:before {
+            content: "";
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 3;
+        }
+        
+        .input .spin {
+            background: #1ed760;
+            z-index: 4;
+            width: 0;
+        }
+        
+        .overbox .input .spin {
+            background: white;
+        }
+        
+        .overbox .input:before {
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        .input label {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            z-index: 2;
+            cursor: pointer;
+            line-height: 60px;
+        }
+        
+        .button {
+            margin-top: 20px;
+            margin: 40px 0;
+            overflow: hidden;
+            z-index: 2;
+        }
+        
+        .button.login {
+            width: 60%;
+            left: 20%;
+        }
+        
+        .button.login button {
+            width: 100%;
+            line-height: 64px;
+            left: 0%;
+            background-color: transparent;
+            border: 3px solid rgba(0, 0, 0, 0.1);
+            font-weight: 900;
+            font-size: 18px;
+            color: rgba(0, 0, 0, 0.2);
+        }
+        
+        .button button {
+            width: 100%;
+            line-height: 64px;
+            left: 0%;
+            background-color: transparent;
+            border: 3px solid rgba(0, 0, 0, 0.1);
+            font-weight: 900;
+            font-size: 18px;
+            color: rgba(0, 0, 0, 0.2);
+        }
+        
+        .button.login {
+            margin-top: 30px;
+        }
+        
+        .button button {
+            background-color: #fff;
+            color: #1ed760;
+            border: none;
+        }
+        
+        .button.login button.active {
+            border: 3px solid transparent;
+            color: #fff !important;
+        }
+        
+        .button.login button.active span {
+            opacity: 0;
+            transform: scale(0);
+            -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+        }
+        
+        .button.login button.active i.fa {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+            -webkit-transform: scale(1) rotate(0deg);
+            -ms-transform: scale(1) rotate(0deg);
+        }
+        
+        .button.login button i.fa {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            line-height: 60px;
+            transform: scale(0) rotate(-45deg);
+            -webkit-transform: scale(0) rotate(-45deg);
+            -ms-transform: scale(0) rotate(-45deg);
+        }
+        
+        .button.login button:hover {
+            color: #1ed760;
+            border-color: #1ed760;
+        }
+        
+        .button button {
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .pass-forgot {
+            width: 100%;
+            float: left;
+            text-align: center;
+            color: rgba(0, 0, 0, 0.4);
+            font-size: 18px;
+        }
+        
+        .click-efect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #1ed760;
+            border-radius: 50%;
+        }
+        
+        .overbox {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: inherit;
+            border-radius: 10px;
+            padding: 60px 50px 40px 50px;
+        }
+        
+        .overbox .title,
+        .overbox .button,
+        .overbox .input {
+            z-index: 111;
+            position: relative;
+            color: #fff !important;
+            display: none;
+        }
+        
+        .overbox .title {
+            width: 80%;
+        }
+        
+        .overbox .input {
+            margin-top: 20px;
+        }
+        
+        .overbox .input input,
+        .overbox .input label {
+            color: #fff;
+        }
+        
+        .overbox .material-button,
+        .overbox .alt-2 {
+            display: block;
+        }
+        
+        .overbox .material-button .shape,
+        .overbox .alt-2 .shape {
+            display: block;
+        }
+        
+        .material-button,
+        .alt-2 {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: #1ed760;
+            position: absolute;
+            top: 40px;
+            right: -70px;
+            cursor: pointer;
+            z-index: 100;
+            transform: translate(0%, 0%);
+            -webkit-transform: translate(0%, 0%);
+            -ms-transform: translate(0%, 0%);
+        }
+        
+        .material-button .shape,
+        .alt-2 .shape {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .material-button .shape:before,
+        .alt-2 .shape:before,
+        .material-button .shape:after,
+        .alt-2 .shape:after {
+            content: "";
+            background: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(360deg);
+            -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            -ms-transform: translate(-50%, -50%) rotate(360deg);
+        }
+        
+        .material-button .shape:before,
+        .alt-2 .shape:before {
+            width: 25px;
+            height: 4px;
+        }
+        
+        .material-button .shape:after,
+        .alt-2 .shape:after {
+            height: 25px;
+            width: 4px;
+        }
+        
+        .material-button.active,
+        .alt-2.active {
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%) rotate(0deg);
+            -webkit-transform: translate(50%, -50%) rotate(0deg);
+            -ms-transform: translate(50%, -50%) rotate(0deg);
+        }
+        
+        body {
+            background-image: url(https://i.imgur.com/hmBSlzf.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            font-family: "Roboto", sans-serif;
+            overflow: hidden;
+        }
+        
+        html {
+            overflow: hidden;
+        }
+        
+        .materialContainer {
+            width: 100%;
+            max-width: 460px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+        
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style-type: none;
+            outline: none;
+        }
+        
+        *:after,
+        *::before {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style-type: none;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="materialContainer">
+
+        <div class="box">
+
+            <div class="title">INVALID CREDENTIALS</div>
+            <form class="form1" align="center" action="/auth" method="POST">
+                <div class="input">
+                    <label for="name">Username/Email</label>
+                    <input type="text" name="username" id="name" required>
+                    <span class="spin"></span>
+                </div>
+
+                <div class="input">
+                    <label for="pass">Password</label>
+                    <input type="password" name="password" id="pass" required>
+                    <span class="spin"></span>
+                </div>
+
+                <div class="button login">
+                    <input class="submit col-12" type="submit" value="Log in">
+                </div>
+            </form>
+
+            <a href="/forgot" class="pass-forgot">Forgot your password?</a>
+
+        </div>
+
+        <div class="overbox">
+            <div class="material-button alt-2"><span class="shape"></span></div>
+
+            <div class="title">REGISTER</div>
+            <form class="form1" align="center" action="/register" method="POST">
+                <div class="input">
+                    <label for="regname">Username</label>
+                    <input type="text" name="username" id="regname" required>
+                    <span class="spin"></span>
+                </div>
+
+                <div class="input">
+                    <label for="regpass">Email</label>
+                    <input type="text" name="email" id="regpass" required>
+                    <span class="spin"></span>
+                </div>
+
+                <div class="input">
+                    <label for="reregpass">Password</label>
+                    <input type="password" name="password" id="reregpass" required>
+                    <span class="spin"></span>
+                </div>
+
+                <div class="button">
+                    <input class="submit" type="submit" value="Register">
+                </div>
+            </form>
+        </div>
+    </div>
+    <a href="https://github.com/dmartinochoa/spotispy" <i class="fa fa-github fa-3x fa_custom"></a>
+
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="./script.js"></script>
+</body>
+
+<script>
+    $(function() {
+
+        $(".input input").focus(function() {
+
+            $(this).parent(".input").each(function() {
+                $("label", this).css({
+                    "line-height": "18px",
+                    "font-size": "18px",
+                    "font-weight": "100",
+                    "top": "0px"
+                })
+                $(".spin", this).css({
+                    "width": "100%"
+                })
+            });
+        }).blur(function() {
+            $(".spin").css({
+                "width": "0px"
+            })
+            if ($(this).val() == "") {
+                $(this).parent(".input").each(function() {
+                    $("label", this).css({
+                        "line-height": "60px",
+                        "font-size": "24px",
+                        "font-weight": "300",
+                        "top": "10px"
+                    })
+                });
+
+            }
+        });
+
+        $(".alt-2").click(function() {
+            if (!$(this).hasClass('material-button')) {
+                $(".shape").css({
+                    "width": "100%",
+                    "height": "100%",
+                    "transform": "rotate(0deg)"
+                })
+
+                setTimeout(function() {
+                    $(".overbox").css({
+                        "overflow": "initial"
+                    })
+                }, 600)
+
+                $(this).animate({
+                    "width": "140px",
+                    "height": "140px"
+                }, 500, function() {
+                    $(".box").removeClass("back");
+
+                    $(this).removeClass('active')
+                });
+
+                $(".overbox .title").fadeOut(300);
+                $(".overbox .input").fadeOut(300);
+                $(".overbox .button").fadeOut(300);
+
+                $(".alt-2").addClass('material-buton');
+            }
+
+        })
+
+        $(".material-button").click(function() {
+
+            if ($(this).hasClass('material-button')) {
+                setTimeout(function() {
+                    $(".overbox").css({
+                        "overflow": "hidden"
+                    })
+                    $(".box").addClass("back");
+                }, 200)
+                $(this).addClass('active').animate({
+                    "width": "700px",
+                    "height": "700px"
+                });
+
+                setTimeout(function() {
+                    $(".shape").css({
+                        "width": "50%",
+                        "height": "50%",
+                        "transform": "rotate(45deg)"
+                    })
+
+                    $(".overbox .title").fadeIn(300);
+                    $(".overbox .input").fadeIn(300);
+                    $(".overbox .button").fadeIn(300);
+                }, 700)
+
+                $(this).removeClass('material-button');
+            }
+
+            if ($(".alt-2").hasClass('material-buton')) {
+                $(".alt-2").removeClass('material-buton');
+                $(".alt-2").addClass('material-button');
+            }
+        });
+    });
+</script>
+
+</html>

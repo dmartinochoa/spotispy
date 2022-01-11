@@ -1,0 +1,117 @@
+body {
+    background: #181818;
+    font-family: "Roboto", sans-serif;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.main {
+    background-color: rgba(24, 24, 24, 0.726);
+    height: 400px;
+    width: 70%;
+    display: inline-block;
+    align-self: center;
+    text-align: center;
+    justify-self: center;
+    justify-content: center;
+    border-radius: 1em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.24);
+    margin-top: 3%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.sign {
+    padding-top: 40px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.un {
+    width: 55%;
+    color: #000000;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.pass {
+    width: 55%;
+    color: #000000;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.un:focus,
+.pass:focus {
+    border: 2px solid rgba(204, 204, 204, 0.18) !important;
+}
+
+.submit {
+    width: 65%;
+    color: #ebebeb;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgb(116, 116, 116);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(196, 196, 196, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.forgot {
+    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.12);
+    color: #E1BEE7;
+    padding-top: 15px;
+    text-align: center;
+}
+
+a {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    color: #E1BEE7;
+    text-decoration: none;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .main {
+        border-radius: 0px;
+    }
+}
