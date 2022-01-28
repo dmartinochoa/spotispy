@@ -30,14 +30,13 @@
 </details>
 
 ## 📁 Structure  <br/>
-  ├── app.js	-	entry point <br/>
+  ├── app.js	-	entry point - starts https sever <br/>
   ├── /config		-	config settings, env variables <br/>
   ├── /models		-	data access layer, business logic	 <br/>
-  ├── /node_modules		-	self explanatory	 <br/>
   ├── /public	 - public files ```https://localhost:3000/(filepath)```	<br>
   ├── /res		-	resources  <br/> 
   ├── /routes		- api routes <br/>
-  └── /views		-  yep <br/>
+  └── /views		-  <br/>
  
 ## ℹ️ Resources <br>
 ### PostgreSql and Node Server Info  <br/>
