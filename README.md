@@ -30,14 +30,13 @@
 </details>
 
 ## 📁 Structure  <br/>
-  ├── app.js	-	entry point <br/>
+  ├── app.js	-	entry point - starts https sever <br/>
   ├── /config		-	config settings, env variables <br/>
   ├── /models		-	data access layer, business logic	 <br/>
-  ├── /node_modules		-	self explanatory	 <br/>
   ├── /public	 - public files ```https://localhost:3000/(filepath)```	<br>
   ├── /res		-	resources  <br/> 
   ├── /routes		- api routes <br/>
-  └── /views		-  yep <br/>
+  └── /views		-  <br/>
  
 ## ℹ️ Resources <br>
 ### PostgreSql and Node Server Info  <br/>
@@ -46,17 +45,11 @@ Use backup file in resource folder for the template database (test: 671f54ce0c54
 
 ### Spotify API Info  <br/>
 [Spotify API Demo](https://github.com/mujibsardar/spotify_jquery_only)<br/>
-[Connect to Spotify API](https://youtu.be/d0FFlTeyAY8)<br/>
 [Web Playback SDK](https://developer.spotify.com/documentation/web-playback-sdk/)<br/>
 [Spotify Authorization](https://developer.spotify.com/documentation/general/guides/authorization-guide/)<br/>
 
 ### Geospatial SQL Objects  <br/>
 [PostGIS Extension](https://postgis.net/)<br/>
-
-### Https Info  <br/>
-Follow instructions for cert/key, run openssl.bat as admin<br/>
-[Create HTTPS server](https://bit.ly/3uBw2oF)<br/>
-[Openssl Download](https://slproweb.com/products/Win32OpenSSL.html)<br/>
 
 ### Other Info  <br/>
 [Geolocation](https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_geolocation_map_script)<br/>
