@@ -19,7 +19,7 @@
         "nodemon": "^2.0.15",
         "pg": "^8.6.0",
         "spotify-web-api-node": "^5.0.2",
-        "superagent": "^6.1.0"
+        "superagent": "^7.0.2"
     },
     "devDependencies": {},
     "scripts": {
